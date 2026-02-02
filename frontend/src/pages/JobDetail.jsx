@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import { getJobById, submitApplication } from '../services/job.service';
 
 export default function JobDetail() {
@@ -35,6 +34,31 @@ export default function JobDetail() {
 
         fetchJob();
     }, [id]);
+
+    // Update document title and meta tags when job loads
+    useEffect(() => {
+        if (job) {
+            document.title = job.seoTitle || `${job.title} | WorkHub`;
+
+            // Update meta description
+            let metaDesc = document.querySelector('meta[name="description"]');
+            if (!metaDesc) {
+                metaDesc = document.createElement('meta');
+                metaDesc.name = 'description';
+                document.head.appendChild(metaDesc);
+            }
+            metaDesc.content = job.metaDescription || job.description?.substring(0, 160) || '';
+
+            // Update meta keywords
+            let metaKeywords = document.querySelector('meta[name="keywords"]');
+            if (!metaKeywords) {
+                metaKeywords = document.createElement('meta');
+                metaKeywords.name = 'keywords';
+                document.head.appendChild(metaKeywords);
+            }
+            metaKeywords.content = `${job.focusKeyphrase || ''}, ${job.keyphraseSynonyms || ''}`;
+        }
+    }, [job]);
 
     if (loading) {
         return <div className="job-detail-container">Loading job details...</div>;
@@ -90,12 +114,6 @@ export default function JobDetail() {
 
     return (
         <div className="job-detail-container">
-            <Helmet>
-                <title>{job.seoTitle || job.title + ' | WorkHub'}</title>
-                <meta name="description" content={job.metaDescription || job.description?.substring(0, 160)} />
-                <meta name="keywords" content={`${job.focusKeyphrase || ''}, ${job.keyphraseSynonyms || ''}`} />
-            </Helmet>
-
             <h1 className="job-detail-title">{job.title}</h1>
             <div className="job-detail-header">
                 <h2 className="job-detail-company">{job.companyName || 'Private Employer'}</h2>
