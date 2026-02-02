@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { API_URL } from '../config';
 
 // Utility to check if user has a specific privilege
 const hasPrivilege = (user, privilege) => {
@@ -16,7 +17,6 @@ const AdminLayout = () => {
     const [users, setUsers] = useState([]);
     const [loadingUsers, setLoadingUsers] = useState(true);
     const [isEmailMarketingOpen, setIsEmailMarketingOpen] = useState(location.pathname.includes('email-marketing'));
-    import { API_URL } from '../config';
 
     const loadUsers = async () => {
         // PREVENT FETCH IF NOT AUTHORIZED
