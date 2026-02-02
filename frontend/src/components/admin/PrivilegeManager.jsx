@@ -58,10 +58,6 @@ const PrivilegeManager = () => {
             'view_email_marketing': 'Access Email Marketing',
             'manage_campaigns': 'Manage Campaigns',
             'manage_templates': 'Manage Templates',
-            // Email Marketing
-            'view_email_marketing': 'Access Email Marketing',
-            'manage_campaigns': 'Manage Campaigns',
-            'manage_templates': 'Manage Templates',
             'manage_lists': 'Manage Email Lists',
 
             // Communication
