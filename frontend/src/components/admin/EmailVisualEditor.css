@@ -1,0 +1,649 @@
+/* Email Visual Editor Premium Styles */
+
+.eve-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #F0F2F5;
+    overflow: hidden;
+    font-family: 'Open Sans', sans-serif;
+    color: #444;
+}
+
+.eve-header {
+    height: 70px;
+    background: white;
+    border-bottom: 1px solid #E2E8F0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    flex-shrink: 0;
+    z-index: 100;
+}
+
+.eve-header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.eve-header-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+}
+
+.eve-header-center {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.eve-header-btn {
+    background: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #4A5568;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.eve-header-btn:hover {
+    background: #F8FAFC;
+    border-color: #CBD5E0;
+}
+
+.eve-save-btn {
+    background: #3B82F6;
+    color: white;
+    padding: 10px 32px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.2);
+    transition: background 0.2s;
+}
+
+.eve-save-btn:hover {
+    background: #2563EB;
+}
+
+.eve-main-layout {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+/* Sidebar Styles */
+.eve-sidebar-left {
+    width: 260px;
+    background: #F8F9FA;
+    border-right: 1px solid #E2E8F0;
+    padding: 16px;
+    /* Reduced padding */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    /* Reduced gap */
+    overflow-y: auto;
+    flex-shrink: 0;
+    height: 100%;
+}
+
+/* Custom Scrollbar for Sidebar */
+.eve-sidebar-left::-webkit-scrollbar {
+    width: 4px;
+    /* Thinner scrollbar */
+}
+
+.eve-sidebar-left::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 2px;
+}
+
+.eve-sidebar-right {
+    width: 340px;
+    background: white;
+    border-left: 1px solid #E2E8F0;
+    padding: 24px;
+    overflow-y: auto;
+}
+
+.eve-sidebar-title {
+    font-size: 14px;
+    /* Slightly smaller title */
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 4px;
+    /* Explicit margin handling */
+}
+
+.eve-block-card {
+    background: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    /* Slightly smaller radius */
+    padding: 12px 16px;
+    /* Compact padding */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: grab;
+    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+    margin-bottom: 8px;
+    /* Reduced margin */
+    position: relative;
+    overflow: hidden;
+}
+
+.eve-block-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: transparent;
+    transition: background 0.2s;
+}
+
+.eve-block-card:hover {
+    border-color: #3B82F6;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+}
+
+.eve-block-card:hover::before {
+    background: #3B82F6;
+}
+
+.eve-block-card:active {
+    cursor: grabbing;
+    transform: scale(0.98);
+}
+
+.eve-block-label {
+    font-weight: 700;
+    color: #2D3748;
+    font-size: 15px;
+    letter-spacing: -0.01em;
+}
+
+/* Canvas Styles */
+.eve-canvas-area {
+    flex: 1;
+    background: #F0F2F5;
+    padding: 48px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.eve-canvas-container {
+    width: 100%;
+    max-width: 650px;
+    background: white;
+    min-height: 100%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    padding: 40px;
+    position: relative;
+    border-radius: 4px;
+}
+
+.eve-canvas-block {
+    position: relative;
+    cursor: pointer;
+    transition: ring 0.2s;
+}
+
+.eve-canvas-block.selected {
+    outline: 2px solid #3B82F6;
+    outline-offset: 2px;
+}
+
+.eve-drop-indicator {
+    height: 4px;
+    background: #3B82F6;
+    margin: 8px 0;
+    border-radius: 2px;
+}
+
+/* AI Assistant Styles */
+.eve-ai-modal {
+    position: absolute;
+    top: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    border: 1px solid #E2E8F0;
+    z-index: 200;
+    overflow: hidden;
+}
+
+.eve-ai-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid #F1F5F9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.eve-ai-header h4 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #1A202C;
+}
+
+.eve-ai-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    cursor: pointer;
+    transition: background 0.2s;
+    border-bottom: 1px solid #F1F5F9;
+}
+
+.eve-ai-option:hover {
+    background: #F0F7FF;
+}
+
+.eve-ai-option span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4A5568;
+}
+
+.eve-ai-footer {
+    padding: 16px 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.eve-ai-gen-btn {
+    background: #3B82F6;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Settings Styles */
+.eve-settings-section {
+    margin-bottom: 24px;
+}
+
+.eve-settings-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #4A5568;
+    margin-bottom: 8px;
+}
+
+.eve-rich-toolbar {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px 8px 0 0;
+    padding: 10px 16px;
+    display: flex;
+    gap: 16px;
+    color: #A0AEC0;
+}
+
+.eve-textarea {
+    width: 100%;
+    border: 1px solid #E2E8F0;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    padding: 16px;
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 120px;
+    resize: none;
+    outline: none;
+    color: #2D3748;
+}
+
+.eve-control-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.eve-select {
+    width: 100%;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 14px;
+    background: white;
+    outline: none;
+}
+
+.eve-toolbar-row {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.eve-toolbar-btn {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-right: 1px solid #E2E8F0;
+    background: white;
+    cursor: pointer;
+    color: #4A5568;
+    font-weight: 700;
+}
+
+.eve-toolbar-btn:last-child {
+    border-right: none;
+}
+
+.eve-toolbar-btn:hover {
+    background: #F8FAFC;
+}
+
+.eve-color-picker {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.eve-color-box {
+    width: 60px;
+    height: 16px;
+    background: #222;
+    border-radius: 2px;
+}
+
+.eve-slider-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.eve-slider-track {
+    width: 120px;
+    height: 4px;
+    background: #E2E8F0;
+    border-radius: 2px;
+    position: relative;
+}
+
+.eve-slider-thumb {
+    width: 14px;
+    height: 14px;
+    background: white;
+    border: 2px solid #CBD5E0;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes eve-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.eve-spin {
+    animation: eve-spin 1s linear infinite;
+}
+
+/* Campaign Meta Bar */
+.eve-meta-bar {
+    background: #F8FAFC;
+    border-bottom: 1px solid #E2E8F0;
+    padding: 12px 24px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.eve-meta-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.eve-meta-field label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+}
+
+.eve-meta-field input {
+    background: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #1E293B;
+    transition: all 0.2s;
+    width: 100%;
+}
+
+.eve-meta-field input:focus {
+    outline: none;
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+/* Preview Modal Extension */
+.eve-preview-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.eve-preview-modal {
+    background: white;
+    width: 100%;
+    max-width: 1000px;
+    height: 90vh;
+    border-radius: 16px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: eve-modal-up 0.3s ease-out;
+}
+
+@keyframes eve-modal-up {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.eve-device-btn {
+    background: transparent;
+    border: none;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748B;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.eve-device-btn.active {
+    background: white;
+    color: #3B82F6;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Properties Panel Styles */
+.eve-props-scroll {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.eve-prop-group {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.eve-prop-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 800;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+}
+
+.eve-prop-field {
+    margin-bottom: 16px;
+}
+
+.eve-prop-field:last-child {
+    margin-bottom: 0;
+}
+
+.eve-prop-field label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 8px;
+}
+
+.eve-prop-field input[type="text"],
+.eve-prop-field input[type="number"],
+.eve-prop-field select {
+    width: 100%;
+    background: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #1E293B;
+    transition: all 0.2s;
+}
+
+.eve-prop-field input:focus {
+    outline: none;
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.eve-prop-btn {
+    background: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #64748B;
+    transition: all 0.2s;
+}
+
+.eve-prop-btn:hover {
+    background: #F1F5F9;
+    color: #3B82F6;
+}
+
+.eve-prop-btn.active {
+    background: #EBF4FF;
+    border-color: #3B82F6;
+    color: #3B82F6;
+}
+
+.eve-empty-state {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #94A3B8;
+    padding: 40px 20px;
+}
+
+.eve-empty-state p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.eve-ai-btn {
+    background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.eve-ai-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+    filter: brightness(1.1);
+}

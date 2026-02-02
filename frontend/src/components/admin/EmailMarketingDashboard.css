@@ -1,0 +1,567 @@
+/* Email Marketing Dashboard Premium Styles */
+
+.emd-container {
+    background-color: #F0F3F7;
+    min-height: 100vh;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #1E293B;
+}
+
+.emd-header {
+    background: white;
+    height: 80px;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #E2E8F0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.emd-search-container {
+    flex: 1;
+    max-width: 500px;
+    position: relative;
+}
+
+.emd-search-input {
+    width: 100%;
+    height: 44px;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 0 16px 0 44px;
+    font-size: 14px;
+    color: #334155;
+    transition: all 0.2s ease;
+}
+
+.emd-search-input:focus {
+    outline: none;
+    border-color: #3063E6;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(48, 99, 230, 0.1);
+}
+
+.emd-search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94A3B8;
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+}
+
+.emd-header-right {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.emd-notification {
+    position: relative;
+    cursor: pointer;
+    color: #475569;
+}
+
+.emd-notif-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: #FF4D4D;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+}
+
+.emd-user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 10px;
+    transition: background 0.2s;
+}
+
+.emd-user-profile:hover {
+    background: #F1F5F9;
+}
+
+.emd-user-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.emd-user-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1E293B;
+}
+
+.emd-sidebar-tabs {
+    display: flex;
+    padding: 0 40px;
+    background: white;
+    border-bottom: 1.5px solid #E2E8F0;
+}
+
+.nav-tab {
+    padding: 20px 24px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #64748B;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+    cursor: pointer;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: transparent;
+}
+
+.nav-tab:hover {
+    color: #3063E6;
+}
+
+.nav-tab.active {
+    color: #3063E6;
+    border-bottom-color: #3063E6;
+}
+
+.emd-content {
+    padding: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.emd-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.emd-card {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.emd-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 32px;
+}
+
+.emd-card-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0F172A;
+}
+
+.emd-card-subtitle {
+    font-size: 13px;
+    color: #64748B;
+}
+
+.emd-revenue-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-left: 4px;
+}
+
+.emd-chart-container {
+    position: relative;
+    height: 240px;
+}
+
+.emd-y-axis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 12px;
+    color: #94A3B8;
+}
+
+.emd-x-axis {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 40px;
+    margin-top: 16px;
+    font-size: 12px;
+    color: #94A3B8;
+}
+
+.emd-legend {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 24px;
+}
+
+.emd-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #475569;
+}
+
+.emd-legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+}
+
+.emd-full-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.emd-table-header {
+    padding: 24px 32px;
+}
+
+.emd-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.emd-table thead th {
+    background: #F8FAFC;
+    padding: 16px 32px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.emd-table tbody td {
+    padding: 20px 32px;
+    font-size: 14px;
+    color: #334155;
+    border-bottom: 1px solid #F1F5F9;
+}
+
+.emd-campaign-name {
+    font-weight: 600;
+    color: #0F172A;
+}
+
+.emd-rate-high {
+    color: #12918F;
+    font-weight: 600;
+}
+
+/* Audience Management Styles */
+.emd-audience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.emd-audience-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0F172A;
+}
+
+.emd-btn-group {
+    display: flex;
+    gap: 12px;
+}
+
+.emd-btn-primary {
+    background: #3063E6;
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.emd-btn-primary:hover {
+    background: #254EDB;
+}
+
+.emd-btn-secondary {
+    background: white;
+    color: #475569 !important;
+    border: 1.5px solid #E2E8F0;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.emd-btn-secondary:hover {
+    background: #F8FAFC;
+    border-color: #CBD5E1;
+}
+
+.emd-btn-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: 1.5px solid #E2E8F0;
+    color: #475569;
+    cursor: pointer;
+    background: white;
+}
+
+.emd-status-pill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #0F172A;
+}
+
+.emd-status-dot-green {
+    width: 18px;
+    height: 18px;
+    background: #12918F;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 10px;
+}
+
+.emd-tag-pill {
+    background: #F1F5F9;
+    color: #475569;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Import Modal Styles */
+.emd-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.emd-modal-container {
+    background: white;
+    width: 100%;
+    max-width: 650px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+}
+
+.emd-modal-header {
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #F1F5F9;
+}
+
+.emd-modal-body {
+    padding: 32px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.emd-step-indicator {
+    display: flex;
+    background: #F1F5F9;
+    padding: 4px;
+    border-radius: 10px;
+    margin-bottom: 32px;
+}
+
+.emd-step {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748B;
+}
+
+.emd-step.active {
+    background: #3063E6;
+    color: white !important;
+}
+
+.emd-step-num {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+}
+
+.emd-step.active .emd-step-num {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.emd-mapping-table {
+    width: 100%;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.emd-mapping-table th {
+    background: #F8FAFC;
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748B;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.emd-mapping-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.emd-mapping-select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #334155;
+    outline: none;
+    background: white;
+}
+
+.emd-mapping-select:focus {
+    border-color: #3063E6;
+}
+
+.emd-modal-footer {
+    padding: 24px 32px;
+    background: #F8FAFC;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    border-top: 1px solid #F1F5F9;
+}
+
+/* Campaign History Table Actions */
+.emd-actions-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.emd-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid transparent;
+    cursor: pointer;
+    background: transparent;
+    white-space: nowrap;
+}
+
+.emd-action-view {
+    color: #3063E6;
+    background: #F0F4FF;
+}
+
+.emd-action-view:hover {
+    background: #E0E7FF;
+    transform: translateY(-1px);
+}
+
+.emd-action-duplicate {
+    color: #6366F1;
+    background: #F5F3FF;
+}
+
+.emd-action-duplicate:hover {
+    background: #EDE9FE;
+    transform: translateY(-1px);
+}
+
+.emd-action-delete {
+    color: #EF4444;
+    background: #FEF2F2;
+}
+
+.emd-action-delete:hover {
+    background: #FEE2E2;
+    transform: translateY(-1px);
+}
+
+.emd-action-btn svg {
+    width: 14px;
+    height: 14px;
+    stroke-width: 2.25;
+}

@@ -1,0 +1,67 @@
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Firebase Credentials
+serviceAccountKey.json
+**/serviceAccountKey.json
+
+# Logs and Debug files
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*_debug.txt
+*_dump.txt
+*_dump_v*.txt
+backend_error_debug*.txt
+backend_log.txt
+debug_output.txt
+campaigns_out.txt
+backend/server_log.txt
+backend/dump_results.txt
+
+# Dependencies
+node_modules
+
+# Build outputs
+dist
+dist-ssr
+build
+
+# Misc
+*.local
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Editor directories
+.vscode/*
+!.vscode/extensions.json
+.idea
+
+# Uploads
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Temporary Data Dumps
+*.json
+!package.json
+!package-lock.json
+!tsconfig.json
+!jsconfig.json
+!.vscode/*.json
+!frontend/package.json
+!backend/package.json
+!backend/routes/*.json
+!backend/config/*.json
